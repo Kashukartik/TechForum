@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User Account - TechForum</title>
+  <link rel="stylesheet" href="/static/">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header class="navbar">
+    <div class="logo">Tech<span>Forum</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="user-profile">
+      <h2>User Account</h2>
+  
+      <!-- User Details Section -->
+      <div class="user-details">
+        <h3>Personal Information</h3>
+        <p><strong>Username:</strong> {{ user[1] }}</p>
+        <p><strong>Email:</strong> {{ user[2] }}</p>
+      </div>  
+      <!-- Account Settings -->
+      <div class="account-settings">
+        <h3>Account Settings</h3>
+        <form action="/update_account" method="post">
+          <div class="input-group">
+            <label for="username">Change Username</label>
+            <input type="text" id="username" name="username" placeholder="New username" value="{{ user[1] }}">
+          </div>
+          <div class="input-group">
+            <label for="email">Change Email</label>
+            <input type="email" id="email" name="email" placeholder="New email" value="{{ user[2] }}">
+          </div>
+          <div class="input-group">
+            <label for="password">Change Password</label>
+            <input type="password" id="password" name="password" placeholder="New password">
+          </div>
+          <button type="submit" class="submit-btn">Update Account</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 TechForum. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </footer>
+</body>
+
+</html>

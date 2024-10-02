@@ -1,0 +1,230 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #343a40;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  
+  .logo span {
+    color: #ffcc00;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00;
+    transition: color 0.3s ease;
+  }
+  
+  /* Search Bar */
+  .search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ffcc00;
+    border-radius: 25px;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #ffc107;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hero Section */
+  .hero {
+    /* background-image: url('https://via.placeholder.com/1500x600'); */
+    background-color: rgb(174, 174, 174);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    font-size: 56px;
+    margin-bottom: 10px;
+  }
+  
+  .hero h1 span {
+    color: #ffcc00;
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .ask-btn {
+    background-color: #ffcc00;
+    color: black;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .ask-btn:hover {
+    background-color: #e0a800;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Categories Section */
+  .categories {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .categories h2 {
+    margin-bottom: 30px;
+    font-size: 42px;
+  }
+  
+  .categories h2 span {
+    color: #ffcc00;
+  }
+  
+  .category-list {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+  }
+  
+  .category-item {
+    background-color: #e9ecef;
+    padding: 30px;
+    border-radius: 10px;
+    width: 30%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .category-item:hover {
+    transform: translateY(-10px);
+    background-color: #f1f3f5;
+  }
+  
+  .category-item h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .category-item p {
+    font-size: 18px;
+  }
+  
+  /* Popular Posts Section */
+  .popular-posts {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .popular-posts h2 {
+    margin-bottom: 30px;
+    font-size: 42px;
+  }
+  
+  .popular-posts h2 span {
+    color: #ffcc00;
+  }
+  
+  .post-list {
+    text-align: left;
+  }
+  
+  .post-item {
+    background-color: #e9ecef;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .post-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-item h4 {
+    margin-bottom: 5px;
+    font-size: 22px;
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  
+  .footer-links a:hover {
+    color: #ffcc00;
+    transition: color 0.3s ease;
+  }
+  

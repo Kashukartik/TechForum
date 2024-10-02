@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechForum - Answer Question</title>
+    <link rel="stylesheet" href="/static/answer.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='answer.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo">Tech<span>Forum</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('account') }}">Account</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Question and Answers Section -->
+        <div class="question-answers">
+            <section class="question-detail">
+                <h2>{{ question[2] }}</h2>
+                <!-- <p><strong>Asked by:</strong> User123</p> -->
+                <p><strong>Category:</strong> {{ question[1] }}</p>
+            </section>
+
+            <section class="answers-section">
+                <h3>Answers</h3>
+
+                <ul>
+                    {% for answer in answers %}
+                    <li>
+                        <div class="answer-item">
+                            <p><strong>Answer by:</strong>{{ answer[1] }}</p>
+                            <p>{{ answer[2] }}</p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </section>
+        </div>
+
+        <!-- Submit a New Answer - Positioned on the Right -->
+        <section class="answer-form">
+            <h3>Your Answer</h3>
+            <form method="POST" action="{{ url_for('question', question_id=question[0]) }}">
+                <textarea id="new-answer" rows="10" name="answer" placeholder="Write your answer here..." required></textarea>
+                <button type="submit" class="submit-btn" value="Post Answer">Submit Answer</button>
+            </form>
+            <br>
+            <a href="{{ url_for('home') }}" class="submit-btn">Back to Questions</a>
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 TechForum. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

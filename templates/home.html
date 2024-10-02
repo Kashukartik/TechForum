@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechForum - Questions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo">Tech<span>Forum</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('account') }}">Account</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- In login.html and index.html -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="ask-question-link">
+            <a href="{{ url_for('ask') }}" class="rounded-button">
+                <button class="ask-btn">Ask a New Question</button>
+            </a>
+
+        </section>
+        <section class="questions">
+            <h2>Questions</h2>
+            {% for question in questions %}
+            <div class="question-item">
+                <h3><a href="{{ url_for('question', question_id=question[0]) }}">{{ question[1]}}</a></h3>
+                <p>{{ question[2] }}</p>
+                <form method="post" action="{{ url_for('question', question_id=question[0]) }}">
+                    <label for="answer">Your Answer:</label>
+                    <br>
+                    <textarea id="answer" name="answer" required></textarea><br>
+                    <input type="submit" value="Post Answer" class="answer-btn">
+                </form>
+            </div>
+
+            {% endfor %}
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 TechForum. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
