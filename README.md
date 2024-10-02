@@ -11,8 +11,6 @@ Tech Forum is a collaborative problem-solving platform designed to help users ad
 <p align="center"><img src="/static/images/Screenshot (45).pngImage/Web site.png"></p>
 <p align="center"><img src="/static/images/Screenshot (46).pngImage/Web site.png"></p>
 <p align="center"><img src="/static/images/Screenshot (47).pngImage/Web site.png"></p>
-<p align="center"><img src="/static/images/Screenshot (48).pngImage/Web site.png"></p>
-<p align="center"><img src="/static/images/Screenshot (49).pngImage/Web site.png"></p>
 
 ## Link
 wait for it 
